@@ -1,0 +1,57 @@
+<odoo>
+  <data>
+   
+  <!-- Action to open Repositories list -->
+  <act_window id="action_dev_orchestration_repositories"
+    name="Repositories"
+    res_model="dev_orchestration.repositories"
+    view_mode="tree,form" />
+
+  <!-- Menu item to open Repositories list -->
+  <menuitem id="menu_dev_orchestration_repositories"
+    name="Repositories"
+    parent="menu_dev_orchestration"
+    action="action_dev_orchestration_repositories" />
+
+  <!-- Tree View for Repositories -->
+  <record id="view_tree_dev_orchestration_repositories" model="ir.ui.view">
+    <field name="name">Repositories Tree View</field>
+    <field name="model">dev_orchestration.repositories</field>
+    <field name="arch" type="xml">
+      <tree string="Repositories">
+        <field name="name"/>
+        <field name="repository"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Form View for Repositories -->
+  <record id="view_form_dev_orchestration_repositories" model="ir.ui.view">
+    <field name="name">Repositories Form View</field>
+    <field name="model">dev_orchestration.repositories</field>
+    <field name="arch" type="xml">
+      <form string="Repository">
+        <header>
+          <!-- To add buttons and status widget -->
+        </header>
+        <sheet>
+          <!-- To add form content -->
+          <group name="group_description">
+            <field name="name"/>
+            <field name="repository" widget="url"/>
+            <field name="description"/>
+          </group>
+          <group name="group_lists">
+            <notebook>
+              <page string="Branches" name="branches">
+                <field name="branches_ids" nolabel="1"/>
+              </page>
+            </notebook>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  </data>
+</odoo>

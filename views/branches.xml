@@ -1,0 +1,57 @@
+<odoo>
+  <data>
+   
+  <!-- Action to open Branches list -->
+  <act_window id="action_dev_orchestration_branches"
+    name="Branches"
+    res_model="dev_orchestration.branches"
+    view_mode="tree,form" />
+
+  <!-- Menu item to open Branches list -->
+  <menuitem id="menu_dev_orchestration_branches"
+    name="Branches"
+    parent="menu_dev_orchestration"
+    action="action_dev_orchestration_branches" />
+
+  <!-- Tree View for Branches -->
+  <record id="view_tree_dev_orchestration_branches" model="ir.ui.view">
+    <field name="name">Branches Tree View</field>
+    <field name="model">dev_orchestration.branches</field>
+    <field name="arch" type="xml">
+      <tree string="Branches">
+        <field name="name"/>
+        <field name="branch_type"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Form View for Branches -->
+  <record id="view_form_dev_orchestration_branches" model="ir.ui.view">
+    <field name="name">Branches Form View</field>
+    <field name="model">dev_orchestration.branches</field>
+    <field name="arch" type="xml">
+      <form string="Branch">
+        <header>
+          <!-- To add buttons and status widget -->
+        </header>
+        <sheet>
+          <!-- To add form content -->
+          <group name="group_description">
+            <field name="name"/>
+            <field name="branch_type"/>
+            <field name="description"/>
+          </group>
+          <group name="group_lists">
+            <notebook>
+              <page string="Repositories" name="repositories">
+                <field name="repositories_ids" nolabel="1"/>
+              </page>
+            </notebook>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+  <data>
+
+    <!-- Parent Orchestration Menu -->
+    <menuitem id="menu_dev_orchestration"
+      name="Orchestration" />
+
+  </data>
+</odoo>
